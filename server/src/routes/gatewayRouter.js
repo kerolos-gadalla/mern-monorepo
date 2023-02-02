@@ -22,7 +22,8 @@ gatewaysRouter.post('/', async (req, res) => {
     serialNumber: req.body.serialNumber,
     name: req.body.name,
     ipv4Address: req.body.ipv4Address,
-    devices: req.body.devices,
+    devices: req.body.devices || [],
+    uid: randomUUID(),
   });
   try {
     const newGateway = await gateway.save();
@@ -49,27 +50,6 @@ gatewaysRouter.post('/:id/devices', getGateway, async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
-
-// gatewaysRouter.patch('/:id', getGateway, async (req, res) => {
-//   if (req.body.serialNumber != null) {
-//     res.gateway.serialNumber = req.body.serialNumber;
-//   }
-//   if (req.body.name != null) {
-//     res.gateway.name = req.body.name;
-//   }
-//   if (req.body.ipv4Address != null) {
-//     res.gateway.ipv4Address = req.body.ipv4Address;
-//   }
-//   if (req.body.devices != null) {
-//     res.gateway.devices = req.body.devices;
-//   }
-//   try {
-//     const updatedGateway = await res.gateway.save();
-//     res.json(updatedGateway);
-//   } catch (err) {
-//     res.status(400).json({ message: err.message });
-//   }
-// });
 
 gatewaysRouter.delete('/:id', getGateway, async (req, res) => {
   try {
