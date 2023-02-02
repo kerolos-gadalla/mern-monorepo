@@ -23,7 +23,6 @@ gatewaysRouter.post('/', async (req, res) => {
     name: req.body.name,
     ipv4Address: req.body.ipv4Address,
     devices: req.body.devices || [],
-    uid: randomUUID(),
   });
   try {
     const newGateway = await gateway.save();

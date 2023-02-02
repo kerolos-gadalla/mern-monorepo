@@ -8,3 +8,6 @@
 - copy .env.sample to .env in the backend /server
 - run `yarn` in the repo root
 - run `yarn start` on the repo root
+
+# Working tests 
+- `yarn test -i "./src/routes/gatewayRouter.test.js"`
