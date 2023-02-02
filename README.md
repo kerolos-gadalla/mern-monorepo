@@ -62,3 +62,13 @@ yarn start
 Contributions are more than welcomed.
 
 Feel free to open issues for asking questions, suggesting features or other things!
+
+
+
+https://github.com/francislagares/mern-monorepo
+
+
+
+# Running mongo db
+- clone thi repo https://github.com/DrSnowbird/mongo-compass-docker
+- in it's root dir run `docker compose up`

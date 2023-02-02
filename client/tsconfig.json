@@ -4,5 +4,5 @@
     "jsx": "react-jsx",
     "module": "esnext"
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "src/pages/GatewaysPage.jsx"]
 }

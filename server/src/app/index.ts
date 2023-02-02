@@ -5,6 +5,9 @@ import helmet from 'helmet';
 import compression from 'compression';
 
 import indexRouter from '@/routes/indexRouter';
+import healthCheckRouter from '@/routes/healthcheck';
+import { gatewaysRouter } from '@/routes/gatewayRouter';
+import '../utils/dbConnector';
 
 const app = express();
 
@@ -21,6 +24,8 @@ app.use(helmet());
 app.use(compression() as RequestHandler);
 
 // Routes...
+app.use('/healthcheck', healthCheckRouter);
+app.use('/gateways', gatewaysRouter);
 app.use('/', indexRouter);
 
 export { app };

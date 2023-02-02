@@ -4,6 +4,6 @@
     "module": "commonjs",
     "outDir": "./build",
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/routes/gatewayRouter.js", "src/utils/schema.test.js"],
   "exclude": ["node_modules", "coverage"]
 }
